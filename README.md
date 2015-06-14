@@ -1,5 +1,12 @@
 # Boot2Docker running on xhyve hypervisor
 
+## Features
+
+- boot2docker v1.6.2
+- Disable TLS
+- Expose the official IANA registered Docker port 2375
+- Support NFS synced folder at /Users
+
 ## Requirements
 
 - [xhyve](https://github.com/mist64/xhyve)
