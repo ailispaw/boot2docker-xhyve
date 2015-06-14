@@ -1,4 +1,4 @@
-all: initrd.img vmlinuz64 boot2docker.iso boot2docker-data.img
+all: initrd.img vmlinuz64 boot2docker.iso boot2docker-data.img exports
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
@@ -12,12 +12,31 @@ boot2docker-data.img: boot2docker-data.tar.gz
 	tar zxvf boot2docker-data.tar.gz
 
 boot2docker-data.tar.gz:
-	curl -OL https://github.com/ailispaw/boot2docker-xhyve/releases/download/v0.1.0/boot2docker-data.tar.gz
+	curl -OL https://github.com/ailispaw/boot2docker-xhyve/releases/download/v0.2.0/boot2docker-data.tar.gz
 
-clean:
+clean: exports-clean
 	$(RM) initrd.img vmlinuz64
 	$(RM) boot2docker.iso
 	$(RM) boot2docker-data.img
 	$(RM) boot2docker-data.tar.gz
 
 .PHONY: all clean
+
+UID = $(shell id -u)
+GID = $(shell id -g)
+USERS = /Users -network 192.168.64.0 -mask 255.255.255.0 -alldirs -mapall=$(UID):$(GID)
+
+exports:
+	@sudo touch /etc/exports
+	@if ! grep -qs '^$(USERS)$$' /etc/exports; \
+	then \
+		echo '$(USERS)' | sudo tee -a /etc/exports; \
+	fi;
+	sudo nfsd restart
+
+exports-clean:
+	@sudo touch /etc/exports
+	sudo sed -E -e '/^\$(USERS)$$/d' -i.bak /etc/exports
+	sudo nfsd restart
+
+.PHONY: exports exports-clean
