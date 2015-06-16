@@ -12,7 +12,7 @@ boot2docker-data.img: boot2docker-data.tar.gz
 	tar zxvf boot2docker-data.tar.gz
 
 boot2docker-data.tar.gz:
-	curl -OL https://github.com/ailispaw/boot2docker-xhyve/releases/download/v0.2.0/boot2docker-data.tar.gz
+	curl -OL https://github.com/ailispaw/boot2docker-xhyve/releases/download/v0.2.1/boot2docker-data.tar.gz
 
 clean: exports-clean
 	$(RM) initrd.img vmlinuz64
