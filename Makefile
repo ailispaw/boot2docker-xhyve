@@ -2,11 +2,11 @@ all: initrd.img vmlinuz64 boot2docker.iso boot2docker-data.img exports
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
-	cp /Volumes/Boot2Docker-v1.6/boot/$@ .
-	hdiutil unmount /Volumes/Boot2Docker-v1.6
+	cp /Volumes/Boot2Docker-v1.7/boot/$@ .
+	hdiutil unmount /Volumes/Boot2Docker-v1.7
 
 boot2docker.iso:
-	curl -OL https://github.com/boot2docker/boot2docker/releases/download/v1.6.2/boot2docker.iso
+	curl -OL https://github.com/boot2docker/boot2docker/releases/download/v1.7.0/boot2docker.iso
 
 boot2docker-data.img: boot2docker-data.tar.gz
 	tar zxvf boot2docker-data.tar.gz
