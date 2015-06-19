@@ -14,7 +14,7 @@ boot2docker-data.img: boot2docker-data.tar.gz
 boot2docker-data.tar.gz:
 	curl -OL https://github.com/ailispaw/boot2docker-xhyve/releases/download/v0.2.1/boot2docker-data.tar.gz
 
-clean: exports-clean
+clean: exports-clean uuid2ip-clean
 	$(RM) initrd.img vmlinuz64
 	$(RM) boot2docker.iso
 	$(RM) boot2docker-data.img
@@ -45,3 +45,17 @@ run:
 	osascript xhyverun.scpt
 
 .PHONY: run
+
+ssh: .mac_address
+	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`
+
+uuid2ip: contrib/uuid2ip/build/uuid2mac
+
+contrib/uuid2ip/build/uuid2mac: contrib/uuid2ip/Makefile
+	cd contrib/uuid2ip && make
+
+uuid2ip-clean:
+	cd contrib/uuid2ip && make clean
+	$(RM) .mac_address
+
+.PHONY: ssh uuid2ip uuid2ip-clean
