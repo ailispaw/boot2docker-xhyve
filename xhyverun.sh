@@ -12,6 +12,13 @@ IMG_CD="-s 3,ahci-cd,boot2docker.iso"
 IMG_HDD="-s 4,virtio-blk,boot2docker-data.img"
 PCI_DEV="-s 0:0,hostbridge -s 31,lpc"
 LPC_DEV="-l com1,stdio"
-UUID="-U bb60a7fd-2655-4927-88a6-fdd1e2223ddc"
+
+UUID="bb60a7fd-2655-4927-88a6-fdd1e2223ddc"
+if [ -n "${UUID}" ]; then
+  if [ -x "contrib/uuid2ip/build/uuid2mac" ]; then
+    contrib/uuid2ip/build/uuid2mac ${UUID} > .mac_address
+  fi
+  UUID="-U ${UUID}"
+fi
 
 xhyve $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
