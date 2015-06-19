@@ -54,7 +54,7 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   {
     iface_status = status;
     if (status != VMNET_SUCCESS || !interface_param) {
-      printf("virtio_net: Could not create vmnet interface, "
+      fprintf(stderr, "virtio_net: Could not create vmnet interface, "
         "permission denied or no entitlement?\n");
       dispatch_semaphore_signal(iface_created);
       return;
