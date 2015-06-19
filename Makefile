@@ -40,3 +40,8 @@ exports-clean:
 	sudo nfsd restart
 
 .PHONY: exports exports-clean
+
+run:
+	osascript xhyverun.scpt
+
+.PHONY: run

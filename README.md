@@ -104,6 +104,23 @@ Docker version 1.7.0, build 0baf609
 docker@boot2docker:~$
 ```
 
+### Run at a split pane in [iTerm2](http://iterm2.com/)
+
+```
+$ make run
+osascript xhyverun.scpt
+$ 
+```
+
+This will split the current window, then you will see in the bottom pane as below.
+
+```
+$ sudo ./xhyverun.sh
+
+Core Linux
+boot2docker login: 
+```
+
 ## Shutting Down
 
 Use `halt` command to shut down.
