@@ -16,9 +16,15 @@ LPC_DEV="-l com1,stdio"
 UUID="bb60a7fd-2655-4927-88a6-fdd1e2223ddc"
 if [ -n "${UUID}" ]; then
   if [ -x "contrib/uuid2ip/build/uuid2mac" ]; then
-    contrib/uuid2ip/build/uuid2mac ${UUID} > .mac_address
+    MAC_ADDRESS=$(contrib/uuid2ip/build/uuid2mac ${UUID})
+    if [ -n "${MAC_ADDRESS}" ]; then
+      echo "${MAC_ADDRESS}" > .mac_address
+    else
+      exit 1
+    fi
   fi
   UUID="-U ${UUID}"
 fi
 
 xhyve $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
+exit 0

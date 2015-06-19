@@ -49,9 +49,7 @@ run:
 ssh: .mac_address
 	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`
 
-uuid2ip: contrib/uuid2ip/build/uuid2mac
-
-contrib/uuid2ip/build/uuid2mac: contrib/uuid2ip/Makefile
+uuid2ip:
 	cd contrib/uuid2ip && make
 
 uuid2ip-clean:

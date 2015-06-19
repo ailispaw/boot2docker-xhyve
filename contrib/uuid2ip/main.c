@@ -4,7 +4,7 @@
 
 #include "uuid.h"
 
-void vmnet_get_mac_address_from_uuid(char *guest_uuid_str);
+int vmnet_get_mac_address_from_uuid(char *guest_uuid_str);
 
 int
 main(int argc, char *argv[])
@@ -14,12 +14,14 @@ main(int argc, char *argv[])
     exit(1);
   }
 
-  vmnet_get_mac_address_from_uuid(argv[1]);
+  if (vmnet_get_mac_address_from_uuid(argv[1])) {
+    exit(1);
+  }
 
   exit(0);
 }
 
-void
+int
 vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   xpc_object_t interface_desc;
   uuid_t uuid;
@@ -38,7 +40,7 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   uuid_from_string(guest_uuid_str, &uuid, &uuid_status);
   if (uuid_status != uuid_s_ok) {
     fprintf(stderr, "Invalid UUID\n");
-    exit(1);
+    return 1;
   }
 
   xpc_dictionary_set_uuid(interface_desc, vmnet_interface_id_key, uuid);
@@ -67,4 +69,10 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
 
   dispatch_semaphore_wait(iface_created, DISPATCH_TIME_FOREVER);
   dispatch_release(if_create_q);
+
+  if (iface_status != VMNET_SUCCESS) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
