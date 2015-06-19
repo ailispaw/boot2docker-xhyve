@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v1.6.2
+- boot2docker v1.7.0
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder at /Users
@@ -61,8 +61,8 @@ boot2docker login: docker
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.6.2, build master : 4534e65 - Wed May 13 21:24:28 UTC 2015
-Docker version 1.6.2, build 7c8fca2
+Boot2Docker version 1.7.0, build master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
+Docker version 1.7.0, build 0baf609
 docker@boot2docker:~$ ifconfig eth0
 eth0      Link encap:Ethernet  HWaddr 16:C1:B5:29:CF:32
           inet addr:192.168.64.3  Bcast:192.168.64.255  Mask:255.255.255.0
@@ -99,8 +99,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.6.2, build master : 4534e65 - Wed May 13 21:24:28 UTC 2015
-Docker version 1.6.2, build 7c8fca2
+Boot2Docker version 1.7.0, build master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
+Docker version 1.7.0, build 0baf609
 docker@boot2docker:~$
 ```
 
@@ -128,21 +128,23 @@ Storage Driver: aufs
  Dirs: 0
  Dirperm1 Supported: true
 Execution Driver: native-0.2
-Kernel Version: 4.0.3-boot2docker
-Operating System: Boot2Docker 1.6.2 (TCL 5.4); master : 4534e65 - Wed May 13 21:24:28 UTC 2015
+Kernel Version: 4.0.5-boot2docker
+Operating System: Boot2Docker 1.7.0 (TCL 6.3); master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
 CPUs: 1
-Total Memory: 998.1 MiB
+Total Memory: 996.3 MiB
 Name: boot2docker
-ID: IZSU:6VGT:R6NN:XV2K:ESMF:U2T7:IPKU:IVEN:6RPQ:ZDKK:ZPOD:MGH5
+ID: HE5H:JSGX:VJ2D:WQKX:7CQV:2G4I:XCM7:5OVO:CNFW:RREP:KWUA:ZTZ3
 Debug mode (server): true
 Debug mode (client): false
-Fds: 11
-Goroutines: 16
-System Time: Sun Jun 14 00:35:02 UTC 2015
+Fds: 10
+Goroutines: 15
+System Time: Fri Jun 19 04:05:38 UTC 2015
 EventsListeners: 0
-Init SHA1: 7f9c6798b022e64f04d2aff8c75cbf38a2779493
 Init Path: /usr/local/bin/docker
 Docker Root Dir: /mnt/vda1/var/lib/docker
+Http Proxy:
+Https Proxy:
+No Proxy:
 ```
 
 ## Resources

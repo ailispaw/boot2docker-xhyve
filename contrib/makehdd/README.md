@@ -34,8 +34,8 @@ boot2docker login: docker
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.6.2, build master : 4534e65 - Wed May 13 21:24:28 UTC 2015
-Docker version 1.6.2, build 7c8fca2
+Boot2Docker version 1.7.0, build master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
+Docker version 1.7.0, build 0baf609
 docker@boot2docker:~$ curl -OL https://raw.githubusercontent.com/ailispaw/boot2docker-xhyve/master/contrib/makehdd.sh
 docker@boot2docker:~$ chmod +x makehdd.sh
 docker@boot2docker:~$ sudo ./makehdd.sh
