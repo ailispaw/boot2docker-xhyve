@@ -47,7 +47,7 @@ run:
 .PHONY: run
 
 ssh: .mac_address
-	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`
+	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)` || true
 
 uuid2ip:
 	cd contrib/uuid2ip && make
