@@ -1,28 +1,44 @@
+/*-
+ * Copyright (c) 2011 NetApp, Inc.
+ * Copyright (c) 2015 xhyve developers
+ * Copyright (c) 2015 A.I. <ailis@paw.zone>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY NETAPP, INC ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL NETAPP, INC OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * $FreeBSD$
+ */
+
 #include <stdio.h>
 
 #include <vmnet/vmnet.h>
 
 #include "uuid.h"
 
-int vmnet_get_mac_address_from_uuid(char *guest_uuid_str);
-
-int
-main(int argc, char *argv[])
-{
-  if (argc < 2) {
-    fprintf(stderr, "Usage: %s <UUID>\n", argv[0]);
-    exit(1);
-  }
-
-  if (vmnet_get_mac_address_from_uuid(argv[1])) {
-    exit(1);
-  }
-
-  exit(0);
-}
-
-int
+static int
 vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
+/*
+ * from vmn_create() in https://github.com/mist64/xhyve/blob/master/src/pci_virtio_vmnet.c
+ */
   xpc_object_t interface_desc;
   uuid_t uuid;
   __block interface_ref iface;
@@ -31,16 +47,13 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   dispatch_queue_t if_create_q;
   uint32_t uuid_status;
 
-/*
- * from vmn_create
- */
   interface_desc = xpc_dictionary_create(NULL, NULL, 0);
   xpc_dictionary_set_uint64(interface_desc, vmnet_operation_mode_key, VMNET_SHARED_MODE);
 
   uuid_from_string(guest_uuid_str, &uuid, &uuid_status);
   if (uuid_status != uuid_s_ok) {
     fprintf(stderr, "Invalid UUID\n");
-    return 1;
+    return -1;
   }
 
   xpc_dictionary_set_uuid(interface_desc, vmnet_interface_id_key, uuid);
@@ -56,8 +69,6 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   {
     iface_status = status;
     if (status != VMNET_SUCCESS || !interface_param) {
-      fprintf(stderr, "virtio_net: Could not create vmnet interface, "
-        "permission denied or no entitlement?\n");
       dispatch_semaphore_signal(iface_created);
       return;
     }
@@ -70,9 +81,26 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   dispatch_semaphore_wait(iface_created, DISPATCH_TIME_FOREVER);
   dispatch_release(if_create_q);
 
-  if (iface_status != VMNET_SUCCESS) {
-    return 1;
-  } else {
-    return 0;
+  if (iface == NULL || iface_status != VMNET_SUCCESS) {
+    fprintf(stderr, "virtio_net: Could not create vmnet interface, "
+      "permission denied or no entitlement?\n");
+    return -1;
   }
+
+  return 0;
+}
+
+int
+main(int argc, char *argv[])
+{
+  if (argc < 2) {
+    fprintf(stderr, "Usage: %s <UUID>\n", argv[0]);
+    exit(1);
+  }
+
+  if (vmnet_get_mac_address_from_uuid(argv[1])) {
+    exit(1);
+  }
+
+  exit(0);
 }
