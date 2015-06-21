@@ -46,6 +46,12 @@ run:
 
 .PHONY: run
 
+mac: .mac_address
+	@cat .mac_address
+
+ip: .mac_address
+	@contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)
+
 ssh: .mac_address
 	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)` || true
 
@@ -56,4 +62,4 @@ uuid2ip-clean:
 	cd contrib/uuid2ip && make clean
 	$(RM) .mac_address
 
-.PHONY: ssh uuid2ip uuid2ip-clean
+.PHONY: mac ip ssh uuid2ip uuid2ip-clean
