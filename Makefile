@@ -53,10 +53,18 @@ ip: .mac_address
 	@contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)
 
 ssh: .mac_address
-	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)` || true
+	@expect -c ' \
+		spawn ssh docker@'`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`'; \
+		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "tcuser\r"; }; \
+		interact; \
+	'
 
 halt: .mac_address
-	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)` sudo halt
+	@expect -c ' \
+		spawn ssh docker@'`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`' sudo halt; \
+		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "tcuser\r"; }; \
+		interact; \
+	'
 
 uuid2ip:
 	cd contrib/uuid2ip && make
