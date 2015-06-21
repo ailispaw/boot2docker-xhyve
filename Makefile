@@ -55,6 +55,9 @@ ip: .mac_address
 ssh: .mac_address
 	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)` || true
 
+halt: .mac_address
+	ssh docker@`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)` sudo halt
+
 uuid2ip:
 	cd contrib/uuid2ip && make
 
@@ -62,4 +65,4 @@ uuid2ip-clean:
 	cd contrib/uuid2ip && make clean
 	$(RM) .mac_address
 
-.PHONY: mac ip ssh uuid2ip uuid2ip-clean
+.PHONY: mac ip ssh halt uuid2ip uuid2ip-clean
