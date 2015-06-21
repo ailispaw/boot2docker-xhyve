@@ -11,5 +11,20 @@ if [ -z "$MAC_ADDRESS" ] ; then
 fi
 shift
 
-awk '{if ($1 == "}") ORS="\n"; else ORS=""; print}' /var/db/dhcpd_leases | \
-  awk '/hw_address=1,'$MAC_ADDRESS'/ {print substr($3, 12)}'
+awk '
+{
+  if ($1 ~ /^ip_address/) {
+    ip_address=substr($1, 12)
+  }
+  if ($1 ~ /^hw_address/) {
+    hw_address=substr($1, 14)
+  }
+  if (hw_address != "" && ip_address != "") {
+    ip_addresses[hw_address]=ip_address
+    hw_address=ip_address=""
+  }
+}
+END {
+  print ip_addresses["'$MAC_ADDRESS'"]
+}
+' /var/db/dhcpd_leases
