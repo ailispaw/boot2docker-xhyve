@@ -14,7 +14,7 @@ $ dd if=/dev/zero of=boot2docker-data.img bs=1g count=4
 ## Set up a persistent disk
 
 - Boot it on xhyve
-- Download and execute [makehdd.sh](https://github.com/ailispaw/boot2docker-xhyve/blob/master/contrib/makehdd.sh)
+- Download and execute [makehdd.sh](https://github.com/ailispaw/boot2docker-xhyve/blob/master/contrib/makehdd/makehdd.sh)
 
 ```
 $ sudo ./xhyverun.sh
@@ -36,7 +36,7 @@ boot2docker login: docker
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
 Boot2Docker version 1.7.0, build master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
 Docker version 1.7.0, build 0baf609
-docker@boot2docker:~$ curl -OL https://raw.githubusercontent.com/ailispaw/boot2docker-xhyve/master/contrib/makehdd.sh
+docker@boot2docker:~$ curl -OL https://raw.githubusercontent.com/ailispaw/boot2docker-xhyve/master/contrib/makehdd/makehdd.sh
 docker@boot2docker:~$ chmod +x makehdd.sh
 docker@boot2docker:~$ sudo ./makehdd.sh
 docker@boot2docker:~$ sudo fdisk -l
