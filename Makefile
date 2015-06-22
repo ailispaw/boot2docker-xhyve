@@ -67,10 +67,10 @@ halt: .mac_address
 	'
 
 uuid2ip:
-	cd contrib/uuid2ip && make
+	$(MAKE) -C contrib/uuid2ip
 
 uuid2ip-clean:
-	cd contrib/uuid2ip && make clean
+	$(MAKE) -C contrib/uuid2ip clean
 	$(RM) .mac_address
 
 .PHONY: mac ip ssh halt uuid2ip uuid2ip-clean
