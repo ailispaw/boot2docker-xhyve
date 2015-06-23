@@ -8,7 +8,7 @@ CMDLINE="loglevel=3 user=docker console=ttyS0 console=tty0 noembed nomodeset nor
 MEM="-m 1G"
 #SMP="-c 2"
 NET="-s 2:0,virtio-net"
-IMG_CD="-s 3,ahci-cd,boot2docker.iso"
+#IMG_CD="-s 3,ahci-cd,boot2docker.iso"
 IMG_HDD="-s 4,virtio-blk,boot2docker-data.img"
 PCI_DEV="-s 0:0,hostbridge -s 31,lpc"
 LPC_DEV="-l com1,stdio"
