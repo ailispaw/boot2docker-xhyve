@@ -5,5 +5,5 @@ vmlinuz64
 boot2docker.iso
 boot2docker-data.*
 
-/contrib/uuid2ip/build/
+/uuid2ip/build/
 .mac_address

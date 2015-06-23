@@ -23,7 +23,7 @@ $ make
 $ cp build/xhyve /usr/local/bin/ # You may need sudo.
 ```
 
-## Getting Boot2Docker Images
+## Setting up Boot2Docker images and tools
 
 ```
 $ git clone https://github.com/ailispaw/boot2docker-xhyve
@@ -34,57 +34,26 @@ $ make
 ## Booting Up
 
 ```
-$ sudo ./xhyverun.sh
-Password:
+$ make run
+Booting up...
+```
 
+- On Termial.app: This will open a new window, then you will see in the window as below.
+- On iTerm.app: This will split the current window, then you will see in the bottom pane as below.
+
+```
 Core Linux
 boot2docker login: 
 ```
 
 ## Logging In
 
-### for Console
-
-```
-Core Linux
-boot2docker login: docker
-                        ##         .
-                  ## ## ##        ==
-               ## ## ## ## ##    ===
-           /"""""""""""""""""\___/ ===
-      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
-           \______ o           __/
-             \    \         __/
-              \____\_______/
- _                 _   ____     _            _
-| |__   ___   ___ | |_|___ \ __| | ___   ___| | _____ _ __
-| '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
-| |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
-|_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.7.0, build master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
-Docker version 1.7.0, build 0baf609
-docker@boot2docker:~$ ifconfig eth0
-eth0      Link encap:Ethernet  HWaddr 16:C1:B5:29:CF:32
-          inet addr:192.168.64.3  Bcast:192.168.64.255  Mask:255.255.255.0
-          inet6 addr: fe80::14c1:b5ff:fe29:cf32/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:44 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:48 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:7026 (6.8 KiB)  TX bytes:7617 (7.4 KiB)
-
-docker@boot2docker:~$ 
-```
-
-### for SSH
-
-Use IP address (192.168.64.X) shown avobe.
-
 - ID: docker
 - Password: tcuser
 
 ```
-$ ssh docker@192.168.64.3
+$ make ssh
+spawn ssh docker@192.168.64.3
 docker@192.168.64.3's password:
                         ##         .
                   ## ## ##        ==
@@ -101,29 +70,12 @@ docker@192.168.64.3's password:
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
 Boot2Docker version 1.7.0, build master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
 Docker version 1.7.0, build 0baf609
-docker@boot2docker:~$
-```
-
-### Run at a split pane in [iTerm2](http://iterm2.com/)
-
-```
-$ make run
-osascript xhyverun.scpt
-$ 
-```
-
-This will split the current window, then you will see in the bottom pane as below.
-
-```
-$ sudo ./xhyverun.sh
-
-Core Linux
-boot2docker login: 
+docker@boot2docker:~$ 
 ```
 
 ## Shutting Down
 
-Use `halt` command to shut down.
+Use `halt` command to shut down in the VM.
 
 ```
 docker@boot2docker:~$ sudo halt
@@ -131,12 +83,19 @@ docker@boot2docker:~$ reboot: System halted
 $ 
 ```
 
-## Using Docker
-
-Use IP address (192.168.64.X) shown avobe as well.
+or
 
 ```
-$ docker -H 192.168.64.3:2375 info
+$ make halt
+spawn ssh docker@192.168.64.3 sudo halt
+docker@192.168.64.3's password:
+Shutting down...
+```
+
+## Using Docker
+
+```
+$ docker -H `make ip`:2375 info
 Containers: 0
 Images: 0
 Storage Driver: aufs

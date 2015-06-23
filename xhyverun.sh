@@ -15,8 +15,8 @@ LPC_DEV="-l com1,stdio"
 
 UUID="bb60a7fd-2655-4927-88a6-fdd1e2223ddc"
 if [ -n "${UUID}" ]; then
-  if [ -x "contrib/uuid2ip/build/uuid2mac" ]; then
-    MAC_ADDRESS=$(contrib/uuid2ip/build/uuid2mac ${UUID})
+  if [ -x "uuid2ip/build/uuid2mac" ]; then
+    MAC_ADDRESS=$(uuid2ip/build/uuid2mac ${UUID})
     if [ -n "${MAC_ADDRESS}" ]; then
       echo "${MAC_ADDRESS}" > .mac_address
     else

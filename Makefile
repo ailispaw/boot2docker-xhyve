@@ -1,4 +1,4 @@
-all: initrd.img vmlinuz64 boot2docker-data.img exports
+all: initrd.img vmlinuz64 boot2docker-data.img exports uuid2ip
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
@@ -41,8 +41,9 @@ exports-clean:
 
 .PHONY: exports exports-clean
 
-run:
-	osascript xhyverun.scpt
+run: xhyverun.scpt xhyverun.sh
+	@sudo echo "Booting up..." # to input password at the current window in advance 
+	@osascript xhyverun.scpt
 
 .PHONY: run
 
@@ -50,27 +51,30 @@ mac: .mac_address
 	@cat .mac_address
 
 ip: .mac_address
-	@contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)
+	@uuid2ip/mac2ip.sh $(shell cat .mac_address)
 
 ssh: .mac_address
 	@expect -c ' \
-		spawn ssh docker@'`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`'; \
+		spawn ssh docker@'`uuid2ip/mac2ip.sh $(shell cat .mac_address)`'; \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "tcuser\r"; }; \
 		interact; \
 	'
 
 halt: .mac_address
 	@expect -c ' \
-		spawn ssh docker@'`contrib/uuid2ip/mac2ip.sh $(shell cat .mac_address)`' sudo halt; \
+		spawn ssh docker@'`uuid2ip/mac2ip.sh $(shell cat .mac_address)`' sudo halt; \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "tcuser\r"; }; \
 		interact; \
 	'
+	@echo "Shutting down..."
 
-uuid2ip:
-	$(MAKE) -C contrib/uuid2ip
+uuid2ip: uuid2ip/build/uuid2mac
+
+uuid2ip/build/uuid2mac:
+	$(MAKE) -C uuid2ip
 
 uuid2ip-clean:
-	$(MAKE) -C contrib/uuid2ip clean
+	$(MAKE) -C uuid2ip clean
 	$(RM) .mac_address
 
 .PHONY: mac ip ssh halt uuid2ip uuid2ip-clean
