@@ -41,9 +41,9 @@ exports-clean:
 
 .PHONY: exports exports-clean
 
-run: xhyverun.scpt xhyverun.sh
+run: xhyveexec.sh xhyverun.sh
 	@sudo echo "Booting up..." # to input password at the current window in advance 
-	@osascript xhyverun.scpt
+	@./xhyveexec.sh
 
 .PHONY: run
 
