@@ -34,6 +34,15 @@ $ make
 ## Booting Up
 
 ```
+$ sudo ./xhyverun.sh
+
+Core Linux
+boot2docker login: 
+```
+
+or
+
+```
 $ make run
 Booting up...
 ```
