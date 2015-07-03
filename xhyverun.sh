@@ -5,6 +5,7 @@ INITRD="initrd.img"
 #CMDLINE="earlyprintk=serial console=ttyS0 acpi=off"
 CMDLINE="loglevel=3 user=docker console=ttyS0 console=tty0 noembed nomodeset norestore waitusb=10:LABEL=boot2docker-data base"
 
+ACPI="-A"
 MEM="-m 1G"
 #SMP="-c 2"
 NET="-s 2:0,virtio-net"
@@ -26,5 +27,5 @@ if [ -n "${UUID}" ]; then
   UUID="-U ${UUID}"
 fi
 
-xhyve $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
+xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
 exit 0
