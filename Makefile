@@ -47,23 +47,27 @@ run: xhyveexec.sh xhyverun.sh
 
 .PHONY: run
 
+IP = `uuid2ip/mac2ip.sh $(shell cat .mac_address)`
+ID = docker
+PW = tcuser
+
 mac: .mac_address
 	@cat .mac_address
 
 ip: .mac_address
-	@uuid2ip/mac2ip.sh $(shell cat .mac_address)
+	@echo $(IP)
 
 ssh: .mac_address
 	@expect -c ' \
-		spawn ssh docker@'`uuid2ip/mac2ip.sh $(shell cat .mac_address)`'; \
-		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "tcuser\r"; }; \
+		spawn ssh $(ID)@'$(IP)'; \
+		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
 
 halt: .mac_address
 	@expect -c ' \
-		spawn ssh docker@'`uuid2ip/mac2ip.sh $(shell cat .mac_address)`' sudo halt; \
-		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "tcuser\r"; }; \
+		spawn ssh $(ID)@'$(IP)' sudo halt; \
+		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
 	@echo "Shutting down..."
