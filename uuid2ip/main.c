@@ -60,8 +60,8 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
   uuid_t uuid;
   __block interface_ref iface;
   __block vmnet_return_t iface_status;
-  dispatch_semaphore_t iface_created;
-  dispatch_queue_t if_create_q;
+  dispatch_semaphore_t iface_created, iface_stopped;
+  dispatch_queue_t if_create_q, if_stop_q;
   uint32_t uuid_status;
 
   interface_desc = xpc_dictionary_create(NULL, NULL, 0);
@@ -100,6 +100,28 @@ vmnet_get_mac_address_from_uuid(char *guest_uuid_str) {
 
   if (iface == NULL || iface_status != VMNET_SUCCESS) {
     fprintf(stderr, "virtio_net: Could not create vmnet interface, "
+      "permission denied or no entitlement?\n");
+    return -1;
+  }
+
+  iface_status = 0;
+
+  if_stop_q = dispatch_queue_create("org.xhyve.vmnet.stop", DISPATCH_QUEUE_SERIAL);
+
+  iface_stopped = dispatch_semaphore_create(0);
+
+  iface_status = vmnet_stop_interface(iface, if_stop_q,
+    ^(vmnet_return_t status)
+  {
+    iface_status = status;
+    dispatch_semaphore_signal(iface_stopped);
+  });
+
+  dispatch_semaphore_wait(iface_stopped, DISPATCH_TIME_FOREVER);
+  dispatch_release(if_stop_q);
+
+  if (iface_status != VMNET_SUCCESS) {
+    fprintf(stderr, "virtio_net: Could not stop vmnet interface, "
       "permission denied or no entitlement?\n");
     return -1;
   }
