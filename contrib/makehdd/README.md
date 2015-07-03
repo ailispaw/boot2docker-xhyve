@@ -51,9 +51,9 @@ Units = cylinders of 2048 * 512 = 1048576 bytes
 
 Partition table entries are not in disk order
 docker@boot2docker:~$ ls -l /mnt/vda1/var/lib/boot2docker
-total 64
--rwxr-xr-x    1 root     root         30667 Jun 16 03:44 bootsync.sh
--rw-r--r--    1 root     root         29504 Jun 16 03:44 profile
+total 8
+-rwxr-xr-x    1 root     root           250 Jul  3 21:43 bootsync.sh
+-rw-r--r--    1 root     root            14 Jul  3 21:43 profile
 docker@boot2docker:~$ sudo halt
 docker@boot2docker:~$ reboot: System halted
 $ 
