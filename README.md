@@ -134,6 +134,7 @@ No Proxy:
 
 ## Resources
 
-- [bootpd -- Mac OS X's built-in DHCP/BOOTP/NetBoot server](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/bootpd.8.html)
-  - /etc/bootpd.plist
-  - /var/db/dhcpd_leases
+- /var/db/dhcpd_leases
+- /Library/Preferences/SystemConfiguration/com.apple.vmnet
+  - Shared_Net_Address
+  - Shared_Net_Mask

@@ -22,21 +22,24 @@ clean: exports-clean uuid2ip-clean
 
 .PHONY: all clean
 
-UID = $(shell id -u)
-GID = $(shell id -g)
-USERS = /Users -network 192.168.64.0 -mask 255.255.255.0 -alldirs -mapall=$(UID):$(GID)
+UID      = $(shell id -u)
+GID      = $(shell id -g)
+VMNET    = /Library/Preferences/SystemConfiguration/com.apple.vmnet
+NET_ADDR = $(shell defaults read $(VMNET) Shared_Net_Address)
+NET_MASK = $(shell defaults read $(VMNET) Shared_Net_Mask)
+EXPORTS  = /Users -network $(NET_ADDR) -mask $(NET_MASK) -alldirs -mapall=$(UID):$(GID)
 
 exports:
 	@sudo touch /etc/exports
-	@if ! grep -qs '^$(USERS)$$' /etc/exports; \
+	@if ! grep -qs '^$(EXPORTS)$$' /etc/exports; \
 	then \
-		echo '$(USERS)' | sudo tee -a /etc/exports; \
+		echo '$(EXPORTS)' | sudo tee -a /etc/exports; \
 	fi;
 	sudo nfsd restart
 
 exports-clean:
 	@sudo touch /etc/exports
-	sudo sed -E -e '/^\$(USERS)$$/d' -i.bak /etc/exports
+	sudo sed -E -e '/^\$(EXPORTS)$$/d' -i.bak /etc/exports
 	sudo nfsd restart
 
 .PHONY: exports exports-clean
