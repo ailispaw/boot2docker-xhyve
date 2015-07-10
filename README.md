@@ -135,6 +135,6 @@ No Proxy:
 ## Resources
 
 - /var/db/dhcpd_leases
-- /Library/Preferences/SystemConfiguration/com.apple.vmnet
+- /Library/Preferences/SystemConfiguration/com.apple.vmnet.plist
   - Shared_Net_Address
   - Shared_Net_Mask

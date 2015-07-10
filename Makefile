@@ -22,12 +22,7 @@ clean: exports-clean uuid2ip-clean
 
 .PHONY: all clean
 
-UID      = $(shell id -u)
-GID      = $(shell id -g)
-VMNET    = /Library/Preferences/SystemConfiguration/com.apple.vmnet
-NET_ADDR = $(shell defaults read $(VMNET) Shared_Net_Address)
-NET_MASK = $(shell defaults read $(VMNET) Shared_Net_Mask)
-EXPORTS  = /Users -network $(NET_ADDR) -mask $(NET_MASK) -alldirs -mapall=$(UID):$(GID)
+EXPORTS = $(shell ./vmnet_export.sh)
 
 exports:
 	@sudo touch /etc/exports
