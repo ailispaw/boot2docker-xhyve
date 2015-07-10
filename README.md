@@ -12,7 +12,10 @@
 - [xhyve](https://github.com/mist64/xhyve)
   - Mac OS X Yosemite 10.10.3 or later
   - A 2010 or later Mac (i.e. a CPU that supports EPT)
-- Other hypervisors like VirtualBox must ***NOT*** be running at the same time, or crash.
+
+## Caution
+
+- **Kernel Panic** will occur on booting, once VirtualBox (< v5.0) has run before.
 
 ## Installing xhyve
 
