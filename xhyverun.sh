@@ -3,7 +3,7 @@
 KERNEL="vmlinuz64"
 INITRD="initrd.img"
 #CMDLINE="earlyprintk=serial console=ttyS0 acpi=off"
-CMDLINE="loglevel=3 user=docker console=ttyS0 console=tty0 noembed nomodeset norestore waitusb=10:LABEL=boot2docker-data base"
+CMDLINE="loglevel=3 user=docker console=ttyS0 console=tty0 noembed nomodeset norestore waitusb=10:LABEL=boot2docker-data base host=boot2docker"
 
 ACPI="-A"
 MEM="-m 1G"
