@@ -7,11 +7,15 @@ MNT=/mnt/vda1
 
 (echo n; echo p; echo 2; echo; echo +1000M; echo w) | fdisk ${DEV}
 (echo t; echo 82; echo w) | fdisk ${DEV}
-(echo n; echo p; echo 1; echo; echo; echo w) | fdisk ${DEV}
-
-sleep 5
-
+until [ -b "${DEV}2" ]; do
+  sleep 0.5
+done
 mkswap ${DEV}2
+
+(echo n; echo p; echo 1; echo; echo; echo w) | fdisk ${DEV}
+until [ -b "${DEV}1" ]; do
+  sleep 0.5
+done
 mkfs.ext4 -L ${LABEL} ${DEV}1
 
 mkdir -p ${MNT}
