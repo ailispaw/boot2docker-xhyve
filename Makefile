@@ -55,16 +55,18 @@ mac: .mac_address
 ip: .mac_address
 	@echo $(IP)
 
+SSH_ARGS = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+
 ssh: .mac_address
 	@expect -c ' \
-		spawn ssh $(ID)@'$(IP)'; \
+		spawn ssh $(ID)@'$(IP)' $(SSH_ARGS); \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
 
 halt: .mac_address
 	@expect -c ' \
-		spawn ssh $(ID)@'$(IP)' sudo halt; \
+		spawn ssh $(ID)@'$(IP)' $(SSH_ARGS) sudo halt; \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
