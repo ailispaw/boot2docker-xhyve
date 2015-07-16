@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v1.7.0
+- boot2docker v1.7.1
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder at /Users
