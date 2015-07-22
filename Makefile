@@ -1,4 +1,4 @@
-all: initrd.img vmlinuz64 boot2docker-data.img exports uuid2ip
+all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
