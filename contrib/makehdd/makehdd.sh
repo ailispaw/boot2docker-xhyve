@@ -16,7 +16,7 @@ mkswap ${DEV}2
 until [ -b "${DEV}1" ]; do
   sleep 0.5
 done
-mkfs.ext4 -b 4096 -i 4096 -L ${LABEL} ${DEV}1
+mkfs.ext4 -L ${LABEL} ${DEV}1
 
 mkdir -p ${MNT}
 mount ${DEV}1 ${MNT}
