@@ -26,6 +26,12 @@ $ make
 $ cp build/xhyve /usr/local/bin/ # You may need sudo.
 ```
 
+or
+
+```
+$ brew install xhyve
+```
+
 ## Setting up Boot2Docker images and tools
 
 ```
