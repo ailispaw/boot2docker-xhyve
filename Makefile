@@ -59,7 +59,7 @@ SSH_ARGS = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 ssh: .mac_address
 	@expect -c ' \
-		spawn ssh $(ID)@'$(IP)' $(SSH_ARGS); \
+		spawn ssh $(ID)@'$(IP)' $(SSH_ARGS) $(filter-out $@,$(MAKECMDGOALS)); \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
@@ -82,3 +82,6 @@ uuid2ip-clean:
 	$(RM) .mac_address
 
 .PHONY: mac ip ssh halt uuid2ip uuid2ip-clean
+
+.DEFAULT:
+	@:
