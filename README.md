@@ -108,31 +108,29 @@ Shutting down...
 
 ```
 $ docker -H `make ip`:2375 info
-Containers: 0
-Images: 0
+Containers: 2
+Images: 5
 Storage Driver: aufs
  Root Dir: /mnt/vda1/var/lib/docker/aufs
  Backing Filesystem: extfs
- Dirs: 0
+ Dirs: 9
  Dirperm1 Supported: true
 Execution Driver: native-0.2
-Kernel Version: 4.0.5-boot2docker
-Operating System: Boot2Docker 1.7.0 (TCL 6.3); master : 7960f90 - Thu Jun 18 18:31:45 UTC 2015
+Logging Driver: json-file
+Kernel Version: 4.0.7-boot2docker
+Operating System: Boot2Docker 1.7.1 (TCL 6.3); xhyve : 9a59e50 - Thu Jul 16 00:26:02 UTC 2015
 CPUs: 1
 Total Memory: 996.3 MiB
 Name: boot2docker
-ID: HE5H:JSGX:VJ2D:WQKX:7CQV:2G4I:XCM7:5OVO:CNFW:RREP:KWUA:ZTZ3
+ID: B243:SVE5:H5FI:MV3P:CUHD:6FG5:O4RY:OBLJ:G34P:4SEC:XCMS:7GIY
 Debug mode (server): true
-Debug mode (client): false
-Fds: 10
-Goroutines: 15
-System Time: Fri Jun 19 04:05:38 UTC 2015
+File Descriptors: 21
+Goroutines: 32
+System Time: 2015-07-30T19:21:48.722587684Z
 EventsListeners: 0
+Init SHA1:
 Init Path: /usr/local/bin/docker
 Docker Root Dir: /mnt/vda1/var/lib/docker
-Http Proxy:
-Https Proxy:
-No Proxy:
 ```
 
 ## Resources
