@@ -66,7 +66,6 @@ boot2docker login:
 ```
 $ make ssh
 spawn ssh docker@192.168.64.3 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
-Warning: Permanently added '192.168.64.3' (RSA) to the list of known hosts.
 docker@192.168.64.3's password:
                         ##         .
                   ## ## ##        ==

@@ -55,7 +55,7 @@ mac: .mac_address
 ip: .mac_address
 	@echo $(IP)
 
-SSH_ARGS = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+SSH_ARGS = -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 ssh: .mac_address
 	@expect -c ' \
