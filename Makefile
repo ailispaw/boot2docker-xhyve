@@ -59,14 +59,14 @@ SSH_ARGS = -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 ssh: .mac_address
 	@expect -c ' \
-		spawn ssh $(ID)@'$(IP)' $(SSH_ARGS) $(filter-out $@,$(MAKECMDGOALS)); \
+		spawn -noecho ssh $(ID)@'$(IP)' $(SSH_ARGS) $(filter-out $@,$(MAKECMDGOALS)); \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
 
 halt: .mac_address
 	@expect -c ' \
-		spawn ssh $(ID)@'$(IP)' $(SSH_ARGS) sudo halt; \
+		spawn -noecho ssh $(ID)@'$(IP)' $(SSH_ARGS) sudo halt; \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PW)\r"; }; \
 		interact; \
 	'
