@@ -16,6 +16,7 @@
 ## Caution
 
 - **Kernel Panic** will occur on booting, once VirtualBox (< v5.0) has run before.
+- Pay attention to **exposing the port 2375 without TLS**, as you see the features.
 
 ## Installing xhyve
 
