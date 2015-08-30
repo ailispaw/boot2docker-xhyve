@@ -1,11 +1,11 @@
 #!/bin/sh
 
-CMD="sudo ./xhyverun.sh && exit"
+CMD="cd '$(pwd)'; sudo ./xhyverun.sh && exit"
 
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ] ; then
   osascript <<END
     tell application "Terminal"
-      do script "cd '$(pwd)'; ${CMD}"
+      do script "${CMD}"
     end tell
 END
 elif [ "${TERM_PROGRAM}" = "iTerm.app" ] ; then
