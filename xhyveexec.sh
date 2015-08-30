@@ -13,7 +13,7 @@ elif [ "${TERM_PROGRAM}" = "iTerm.app" ] ; then
     tell application "iTerm"
       tell application "System Events" to keystroke "d" using {shift down, command down}
       tell the current session of current terminal
-        write text "${CMD}"
+        write text "cd '$(pwd)'; ${CMD}"
       end tell
       tell application "System Events" to keystroke "[" using {command down}
     end tell
