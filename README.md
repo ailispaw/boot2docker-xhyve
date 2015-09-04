@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v1.7.1
+- boot2docker v1.8.1
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder at /Users
@@ -87,8 +87,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.7.1, build xhyve : 9a59e50 - Thu Jul 16 00:26:02 UTC 2015
-Docker version 1.7.1, build 786b29d
+Boot2Docker version 1.8.1, build xhyve : e9e034e - Fri Sep  4 20:35:54 UTC 2015
+Docker version 1.8.1, build d12ea79
 docker@boot2docker:~$ 
 ```
 
@@ -115,25 +115,25 @@ Shutting down...
 
 ```
 $ docker -H `make ip`:2375 info
-Containers: 2
-Images: 5
+Containers: 0
+Images: 0
 Storage Driver: aufs
  Root Dir: /mnt/vda1/var/lib/docker/aufs
  Backing Filesystem: extfs
- Dirs: 9
+ Dirs: 0
  Dirperm1 Supported: true
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 4.0.7-boot2docker
-Operating System: Boot2Docker 1.7.1 (TCL 6.3); xhyve : 9a59e50 - Thu Jul 16 00:26:02 UTC 2015
+Kernel Version: 4.0.9-boot2docker
+Operating System: Boot2Docker 1.8.1 (TCL 6.3); xhyve : e9e034e - Fri Sep  4 20:35:54 UTC 2015
 CPUs: 1
 Total Memory: 996.3 MiB
 Name: boot2docker
-ID: B243:SVE5:H5FI:MV3P:CUHD:6FG5:O4RY:OBLJ:G34P:4SEC:XCMS:7GIY
+ID: LZVE:RL3S:PJMB:VW4T:KWZI:3MIC:OFU5:IRNQ:AP7N:RWJX:IBTO:HQYV
 Debug mode (server): true
-File Descriptors: 21
-Goroutines: 32
-System Time: 2015-07-30T19:21:48.722587684Z
+File Descriptors: 13
+Goroutines: 16
+System Time: 2015-09-04T21:45:08.252726728Z
 EventsListeners: 0
 Init SHA1:
 Init Path: /usr/local/bin/docker
