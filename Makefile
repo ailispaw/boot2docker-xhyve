@@ -2,11 +2,11 @@ all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
-	cp /Volumes/Boot2Docker-v1.7/boot/$@ . && sync
-	hdiutil unmount /Volumes/Boot2Docker-v1.7
+	cp /Volumes/Boot2Docker-v1.8/boot/$@ . && sync
+	hdiutil unmount /Volumes/Boot2Docker-v1.8
 
 boot2docker.iso:
-	curl -OL https://github.com/ailispaw/boot2docker/releases/download/xhyve%2Fv1.7.1/boot2docker.iso
+	curl -OL https://github.com/timfallmk/boot2docker/releases/download/v1.8.1/boot2docker.iso
 
 boot2docker-data.img: boot2docker-data.tar.gz
 	tar zxvf boot2docker-data.tar.gz
@@ -40,7 +40,7 @@ exports-clean:
 .PHONY: exports exports-clean
 
 run: xhyveexec.sh xhyverun.sh
-	@sudo echo "Booting up..." # to input password at the current window in advance 
+	@sudo echo "Booting up..." # to input password at the current window in advance
 	@./xhyveexec.sh
 
 .PHONY: run
