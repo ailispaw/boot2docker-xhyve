@@ -114,7 +114,12 @@ Shutting down...
 ## Using Docker
 
 ```
-$ docker -H `make ip`:2375 info
+$ make env
+export DOCKER_HOST=tcp://192.168.64.3:2375;
+unset DOCKER_CERT_PATH;
+unset DOCKER_TLS_VERIFY;
+$ eval $(make env)
+$ docker info
 Containers: 0
 Images: 0
 Storage Driver: aufs
