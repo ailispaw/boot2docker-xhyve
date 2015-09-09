@@ -72,6 +72,9 @@ halt: .mac_address
 	'
 	@echo "Shutting down..."
 
+env:
+	@echo export DOCKER_HOST=tcp://$(IP):2375
+
 uuid2ip: uuid2ip/build/uuid2mac
 
 uuid2ip/build/uuid2mac:
