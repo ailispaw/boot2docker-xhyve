@@ -73,7 +73,9 @@ halt: .mac_address
 	@echo "Shutting down..."
 
 env:
-	@echo export DOCKER_HOST=tcp://$(IP):2375
+	@echo "export DOCKER_HOST=tcp://$(IP):2375;"
+	@echo "unset DOCKER_CERT_PATH;"
+	@echo "unset DOCKER_TLS_VERIFY;"
 
 uuid2ip: uuid2ip/build/uuid2mac
 
