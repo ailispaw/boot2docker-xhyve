@@ -25,17 +25,25 @@ clean: exports-clean uuid2ip-clean
 EXPORTS = $(shell ./vmnet_export.sh)
 
 exports:
-	@sudo touch /etc/exports
-	@if ! grep -qs '^$(EXPORTS)$$' /etc/exports; \
-	then \
-		echo '$(EXPORTS)' | sudo tee -a /etc/exports; \
+	@if [ -n "$(EXPORTS)" ]; then \
+		sudo touch /etc/exports; \
+		if ! grep -qs '^$(EXPORTS)$$' /etc/exports; \
+		then \
+			echo '$(EXPORTS)' | sudo tee -a /etc/exports; \
+		fi; \
+		sudo nfsd restart; \
+	else \
+		echo "It seems your first run for xhyve with vmnet."; \
+		echo "You can't use NFS shared folder at this time."; \
+		echo "But it should be available at the next boot."; \
 	fi;
-	sudo nfsd restart
 
 exports-clean:
-	@sudo touch /etc/exports
-	sudo sed -E -e '/^\$(EXPORTS)$$/d' -i.bak /etc/exports
-	sudo nfsd restart
+	@if [ -n "$(EXPORTS)" ]; then \
+		sudo touch /etc/exports; \
+		sudo sed -E -e '/^\$(EXPORTS)$$/d' -i.bak /etc/exports; \
+		sudo nfsd restart; \
+	fi;
 
 .PHONY: exports exports-clean
 

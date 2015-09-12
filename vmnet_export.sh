@@ -1,6 +1,10 @@
 #!/bin/sh
 
 VMNET="/Library/Preferences/SystemConfiguration/com.apple.vmnet"
+if [ ! -f "${VMNET}.plist" ]; then
+  exit
+fi
+
 IP_ADDR=$(defaults read ${VMNET} Shared_Net_Address)
 NET_MASK=$(defaults read ${VMNET} Shared_Net_Mask)
 
