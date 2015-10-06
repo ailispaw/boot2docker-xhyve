@@ -5,7 +5,7 @@
 - boot2docker v1.8.1
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
-- Support NFS synced folder at /Users
+- Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
 
 ## Requirements
 
@@ -15,7 +15,7 @@
 
 ## Caution
 
-- **Kernel Panic** will occur on booting, once VirtualBox (< v5.0) has run before.
+- **Kernel Panic** will occur on booting, if VirtualBox (< v5.0) has run before.
 - Pay attention to **exposing the port 2375 without TLS**, as you see the features.
 
 ## Installing xhyve
@@ -24,7 +24,7 @@
 $ git clone https://github.com/mist64/xhyve
 $ cd xhyve
 $ make
-$ cp build/xhyve /usr/local/bin/ # You may need sudo.
+$ cp build/xhyve /usr/local/bin/    # You may require sudo
 ```
 
 or
@@ -53,11 +53,11 @@ boot2docker login:
 or
 
 ```
-$ make run
+$ make run    # You may be asked for your sudo password
 Booting up...
 ```
 
-- On Termial.app: This will open a new window, then you will see in the window as below.
+- On Terminal.app: This will open a new window, then you will see in the window as below.
 - On iTerm.app: This will split the current window, then you will see in the bottom pane as below.
 
 ```
@@ -68,7 +68,7 @@ boot2docker login:
 ## Logging In
 
 - ID: docker
-- Password: tcuser
+- Password: tcuser (in most instances you will not be prompted for a password)
 
 ```
 $ make ssh
@@ -94,7 +94,7 @@ docker@boot2docker:~$
 
 ## Shutting Down
 
-Use `halt` command to shut down in the VM.
+Use `halt` command to shut down in the VM:
 
 ```
 docker@boot2docker:~$ sudo halt
@@ -102,7 +102,7 @@ docker@boot2docker:~$ reboot: System halted
 $ 
 ```
 
-or
+or, use `make halt` on the host:
 
 ```
 $ make halt
@@ -113,12 +113,29 @@ Shutting down...
 
 ## Using Docker
 
+You can simply run Docker within the VM. However, if you install the Docker client on the host, you can use Docker commands natively on the host Mac. Install the Docker client as follows:
+
+```
+$ curl -L https://get.docker.com/builds/Darwin/x86_64/docker-latest -o docker
+$ chmod +x docker
+$ mv docker /usr/local/bin/    # You may require sudo
+```
+
+Alternatively install with Homebrew:
+
+```
+$ brew install docker
+```
+
+Then, in the VM, or on the host if you have installed the Docker client:
+
 ```
 $ make env
 export DOCKER_HOST=tcp://192.168.64.3:2375;
 unset DOCKER_CERT_PATH;
 unset DOCKER_TLS_VERIFY;
 $ eval $(make env)
+
 $ docker info
 Containers: 0
 Images: 0
