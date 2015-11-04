@@ -2,11 +2,11 @@ all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
-	cp /Volumes/Boot2Docker-v1.8/boot/$@ . && sync
-	hdiutil unmount /Volumes/Boot2Docker-v1.8
+	cp /Volumes/Boot2Docker-v1.9/boot/$@ . && sync
+	hdiutil unmount /Volumes/Boot2Docker-v1.9
 
 boot2docker.iso:
-	curl -OL https://github.com/boot2docker/boot2docker/releases/download/v1.8.3/boot2docker.iso
+	curl -OL https://github.com/boot2docker/boot2docker/releases/download/v1.9.0/boot2docker.iso
 
 boot2docker-data.img: boot2docker-data.tar.gz
 	tar zxvf boot2docker-data.tar.gz
