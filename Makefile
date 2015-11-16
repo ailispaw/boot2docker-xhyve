@@ -24,7 +24,7 @@ clean: exports-clean uuid2ip-clean
 	$(RM) boot2docker-data.img
 	$(RM) boot2docker-data.tar.gz
 
-.PHONY: all clean
+.PHONY: all upgrade clean
 
 EXPORTS = $(shell ./vmnet_export.sh)
 

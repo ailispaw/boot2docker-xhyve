@@ -160,6 +160,15 @@ Init Path: /usr/local/bin/docker
 Docker Root Dir: /mnt/vda1/var/lib/docker
 ```
 
+## Upgrading Boot2Docker
+
+When Boot2Docker is upgraded and boot2docker-xhyve is updated,
+
+```
+$ git pull origin master
+$ make upgrade
+```
+
 ## Resources
 
 - /var/db/dhcpd_leases
