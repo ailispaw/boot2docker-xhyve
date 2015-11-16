@@ -1,5 +1,9 @@
 all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
 
+upgrade:
+	$(RM) boot2docker.iso
+	$(MAKE)
+
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
 	cp /Volumes/Boot2Docker-v1.9/boot/$@ . && sync
