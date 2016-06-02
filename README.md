@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v1.11.0
+- boot2docker v1.11.2
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.11.0, build HEAD : 32ee7e9 - Wed Apr 13 20:06:49 UTC 2016
-Docker version 1.11.0, build 4dc5990
+Boot2Docker version 1.11.2, build HEAD : a6645c3 - Wed Jun  1 22:59:51 UTC 2016
+Docker version 1.11.2, build b9f10c9
 docker@boot2docker:~$ 
 ```
 
@@ -137,23 +137,23 @@ $ eval $(make env)
 $ docker info
 Containers: 0
 Images: 0
-Server Version: 1.11.0
+Server Version: 1.11.2
 Storage Driver: aufs
  Root Dir: /mnt/vda1/var/lib/docker/aufs
  Backing Filesystem: extfs
  Dirs: 0
  Dirperm1 Supported: true
 Logging Driver: json-file
-Kernel Version: 4.1.19-boot2docker
-Operating System: Boot2Docker 1.11.0 (TCL 7.0); HEAD : 32ee7e9 - Wed Apr 13 20:06:49 UTC 2016
+Kernel Version: 4.4.12-boot2docker
+Operating System: Boot2Docker 1.11.2 (TCL 7.1); HEAD : a6645c3 - Wed Jun  1 22:59:51 UTC 2016
 CPUs: 1
-Total Memory: 996.1 MiB
+Total Memory: 995.9 MiB
 Name: boot2docker
-ID: 3GFI:H3WP:UI4G:DZAF:RAN6:NQY7:I6QJ:IPYY:GOXA:Q2K5:6RPT:55Y3
+ID: TWFT:X6LD:GESB:TS7J:7AXQ:2EC6:TXH4:YGAP:6WQG:Y4SP:P7X4:WYLJ
 Debug mode (server): true
  File Descriptors: 13
  Goroutines: 29
- System Time: 2016-04-13T20:27:38.708734673Z
+ System Time: 2016-06-02T18:06:08.225632892Z
  EventsListeners: 0
  Init SHA1:
  Init Path:
