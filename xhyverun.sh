@@ -29,6 +29,12 @@ fi
 
 make exports
 
+while ! rpcinfo -u localhost nfs > /dev/null 2>&1; do
+  sleep 0.5
+done
+
+/usr/libexec/bootpd
+echo "Starting VM"
 while [ 1 ]; do
   xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
   if [ $? -ne 0 ]; then
