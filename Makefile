@@ -1,3 +1,5 @@
+VERSION := v1.12.3
+
 all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
 
 upgrade:
@@ -6,11 +8,11 @@ upgrade:
 
 initrd.img vmlinuz64: boot2docker.iso
 	hdiutil mount boot2docker.iso
-	cp /Volumes/b2d-v1.12.2/boot/$@ . && sync
-	hdiutil unmount /Volumes/b2d-v1.12.2
+	cp /Volumes/b2d-$(VERSION)/boot/$@ . && sync
+	hdiutil unmount /Volumes/b2d-$(VERSION)
 
 boot2docker.iso:
-	curl -OL https://github.com/boot2docker/boot2docker/releases/download/v1.12.2/boot2docker.iso
+	curl -OL https://github.com/boot2docker/boot2docker/releases/download/$(VERSION)/boot2docker.iso
 
 boot2docker-data.img: boot2docker-data.tar.gz
 	tar zxvf boot2docker-data.tar.gz
