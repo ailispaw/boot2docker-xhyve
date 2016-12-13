@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v1.12.2
+- boot2docker v1.12.4
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 1.12.3, build HEAD : 7fc7575 - Thu Oct 27 17:23:17 UTC 2016
-Docker version 1.12.3, build 6b644ec
+Boot2Docker version 1.12.4, build HEAD : d0b8fd8 - Tue Dec 13 18:21:26 UTC 2016
+Docker version 1.12.4, build 1564f02
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 1.12.3
+Server Version: 1.12.4
 Storage Driver: aufs
  Root Dir: /mnt/vda1/var/lib/docker/aufs
  Backing Filesystem: extfs
@@ -150,18 +150,18 @@ Logging Driver: json-file
 Plugins:
  Volume: local
  Network: host bridge overlay null
-Kernel Version: 4.4.27-boot2docker
-Operating System: Boot2Docker 1.12.3 (TCL 7.2); HEAD : 7fc7575 - Thu Oct 27 17:23:17 UTC 2016
+Kernel Version: 4.4.38-boot2docker
+Operating System: Boot2Docker 1.12.4 (TCL 7.2); HEAD : d0b8fd8 - Tue Dec 13 18:21:26 UTC 2016
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.8 MiB
 Name: boot2docker
-ID: V2NV:CZ4G:MNBN:Z5MB:24XI:T7K7:DROY:5GJD:EPHC:EBHA:LEA2:OJ4C
+ID: GF5I:ZUHJ:EM6R:NESC:ASML:NRRI:JRUL:36C4:NELK:OKJR:XWSN:6LFQ
 Debug mode (server): true
- File Descriptors: 14
+ File Descriptors: 15
  Goroutines: 23
- System Time: 2016-10-27T20:18:36.825458779Z
+ System Time: 2016-12-13T19:06:36.17253952Z
  EventsListeners: 0
  Init SHA1:
  Init Path:
