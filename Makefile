@@ -1,4 +1,4 @@
-VERSION := v1.13.1
+VERSION := v17.03.0-ce
 
 all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
 
