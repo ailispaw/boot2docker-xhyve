@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.05.0-ce, build HEAD : 5ed2840 - Fri May  5 21:04:09 UTC 2017
-Docker version 17.05.0-ce, build 89658be
+Boot2Docker version 17.06.0-ce, build HEAD : 0672754 - Thu Jun 29 00:06:31 UTC 2017
+Docker version 17.06.0-ce, build 02c1d87
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.05.0-ce
+Server Version: 17.06.0-ce
 Storage Driver: aufs
  Root Dir: /mnt/vda1/var/lib/docker/aufs
  Backing Filesystem: extfs
@@ -151,30 +151,31 @@ Cgroup Driver: cgroupfs
 Plugins:
  Volume: local
  Network: bridge host macvlan null overlay
+ Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
 Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: 9048e5e50717ea4497b757314bad98ea3763c145
-runc version: 9c2d8d184e5da67c95d601382adf14862e4f2228
+containerd version: cfb82a876ecc11b5ca0977d1733adbe58599088a
+runc version: 2d41c047c83e09a6d61d464906feb2a2f3c52aa4
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.66-boot2docker
-Operating System: Boot2Docker 17.05.0-ce (TCL 7.2); HEAD : 5ed2840 - Fri May  5 21:04:09 UTC 2017
+Kernel Version: 4.4.74-boot2docker
+Operating System: Boot2Docker 17.06.0-ce (TCL 7.2); HEAD : 0672754 - Thu Jun 29 00:06:31 UTC 2017
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.8MiB
 Name: boot2docker
-ID: JDXB:DGRC:SHB7:ZTPZ:U6LW:M3BC:P53D:RHM3:6MMG:KM6R:KLFA:IFFJ
+ID: OS32:LHY7:QJCK:RNBF:KUJF:XGP4:FY46:SH56:QVEA:2HMF:6PQU:VA2H
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): true
- File Descriptors: 16
- Goroutines: 22
- System Time: 2017-05-05T21:24:26.984154337Z
+ File Descriptors: 17
+ Goroutines: 25
+ System Time: 2017-06-29T01:51:58.871955615Z
  EventsListeners: 0
 Registry: https://index.docker.io/v1/
 Experimental: false
