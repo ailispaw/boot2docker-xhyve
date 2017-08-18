@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.06.0-ce, build HEAD : 0672754 - Thu Jun 29 00:06:31 UTC 2017
-Docker version 17.06.0-ce, build 02c1d87
+Boot2Docker version 17.06.1-ce, build HEAD : 80114bc - Fri Aug 18 17:58:04 UTC 2017
+Docker version 17.06.1-ce, build 874a737
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.06.0-ce
+Server Version: 17.06.1-ce
 Storage Driver: aufs
  Root Dir: /mnt/vda1/var/lib/docker/aufs
  Backing Filesystem: extfs
@@ -156,26 +156,26 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: cfb82a876ecc11b5ca0977d1733adbe58599088a
-runc version: 2d41c047c83e09a6d61d464906feb2a2f3c52aa4
+containerd version: 6e23458c129b551d5c9871e5174f6b1b7f6d1170
+runc version: 810190ceaa507aa2727d7ae6f4790c76ec150bd2
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.74-boot2docker
-Operating System: Boot2Docker 17.06.0-ce (TCL 7.2); HEAD : 0672754 - Thu Jun 29 00:06:31 UTC 2017
+Kernel Version: 4.4.83-boot2docker
+Operating System: Boot2Docker 17.06.1-ce (TCL 7.2); HEAD : 80114bc - Fri Aug 18 17:58:04 UTC 2017
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.8MiB
 Name: boot2docker
-ID: OS32:LHY7:QJCK:RNBF:KUJF:XGP4:FY46:SH56:QVEA:2HMF:6PQU:VA2H
+ID: 3UVV:3SVR:YKZ5:UEL5:MX2G:P6E5:H3V6:PJXI:L2QM:IDLO:O2QC:NE27
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): true
  File Descriptors: 17
- Goroutines: 25
- System Time: 2017-06-29T01:51:58.871955615Z
+ Goroutines: 26
+ System Time: 2017-08-18T18:43:35.855694861Z
  EventsListeners: 0
 Registry: https://index.docker.io/v1/
 Experimental: false
