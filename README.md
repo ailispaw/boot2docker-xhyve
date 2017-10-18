@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.09.0-ce, build HEAD : 06d5c35 - Wed Sep 27 23:22:43 UTC 2017
-Docker version 17.09.0-ce, build afdb6d4
+Boot2Docker version 17.10.0-ce, build HEAD : 34fe485 - Wed Oct 18 17:16:34 UTC 2017
+Docker version 17.10.0-ce, build f4ffd25
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.09.0-ce
+Server Version: 17.10.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -156,25 +156,25 @@ Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
 containerd version: 06b9cb35161009dcb7123345749fef02f7cea8e0
-runc version: 3f2f8b84a77f73d38244dd690525642a72156c64
+runc version: 0351df1c5a66838d0c392b4ac4cf9450de844e2d
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.89-boot2docker
-Operating System: Boot2Docker 17.09.0-ce (TCL 7.2); HEAD : 06d5c35 - Wed Sep 27 23:22:43 UTC 2017
+Kernel Version: 4.4.93-boot2docker
+Operating System: Boot2Docker 17.10.0-ce (TCL 7.2); HEAD : 34fe485 - Wed Oct 18 17:16:34 UTC 2017
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.8MiB
 Name: boot2docker
-ID: LZLG:5XY3:GINF:64NA:HESB:QGK2:LY2H:EAST:RTLM:XKWI:BNWY:BAHI
+ID: RFUY:HM7O:5XKO:6GLF:JB7O:MHZC:CFHL:OMFO:O5BV:WO2M:ANNI:YWAJ
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): true
  File Descriptors: 18
  Goroutines: 26
- System Time: 2017-09-28T03:24:00.129917597Z
+ System Time: 2017-10-18T18:01:04.254762917Z
  EventsListeners: 0
 Registry: https://index.docker.io/v1/
 Experimental: false
