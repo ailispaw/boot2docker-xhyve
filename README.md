@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v17.07.0-ce
+- boot2docker v17.11.0-ce
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.10.0-ce, build HEAD : 34fe485 - Wed Oct 18 17:16:34 UTC 2017
-Docker version 17.10.0-ce, build f4ffd25
+Boot2Docker version 17.11.0-ce, build HEAD : e620608 - Tue Nov 21 18:11:40 UTC 2017
+Docker version 17.11.0-ce, build 1caf76c
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.10.0-ce
+Server Version: 17.11.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -155,26 +155,26 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: 06b9cb35161009dcb7123345749fef02f7cea8e0
+containerd version: 992280e8e265f491f7a624ab82f3e238be086e49
 runc version: 0351df1c5a66838d0c392b4ac4cf9450de844e2d
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.93-boot2docker
-Operating System: Boot2Docker 17.10.0-ce (TCL 7.2); HEAD : 34fe485 - Wed Oct 18 17:16:34 UTC 2017
+Kernel Version: 4.4.100-boot2docker
+Operating System: Boot2Docker 17.11.0-ce (TCL 7.2); HEAD : e620608 - Tue Nov 21 18:11:40 UTC 2017
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.8MiB
 Name: boot2docker
-ID: RFUY:HM7O:5XKO:6GLF:JB7O:MHZC:CFHL:OMFO:O5BV:WO2M:ANNI:YWAJ
+ID: NAO6:LNSN:2H5F:6Y36:NNZ3:XXFM:GANK:HZYU:NDEB:USJY:PUFD:NOEW
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): true
- File Descriptors: 18
- Goroutines: 26
- System Time: 2017-10-18T18:01:04.254762917Z
+ File Descriptors: 20
+ Goroutines: 34
+ System Time: 2017-11-21T19:26:49.114847111Z
  EventsListeners: 0
 Registry: https://index.docker.io/v1/
 Experimental: false
