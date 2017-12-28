@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v17.11.0-ce
+- boot2docker v17.12.0-ce
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.11.0-ce, build HEAD : e620608 - Tue Nov 21 18:11:40 UTC 2017
-Docker version 17.11.0-ce, build 1caf76c
+Boot2Docker version 17.12.0-ce, build HEAD : 378b049 - Wed Dec 27 23:39:20 UTC 2017
+Docker version 17.12.0-ce, build c97c6d6
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.11.0-ce
+Server Version: 17.12.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -155,28 +155,29 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: 992280e8e265f491f7a624ab82f3e238be086e49
-runc version: 0351df1c5a66838d0c392b4ac4cf9450de844e2d
+containerd version: 89623f28b87a6004d4b785663257362d1658a729
+runc version: b2567b37d7b75eb4cf325b77297b140ea686ce8f
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.100-boot2docker
-Operating System: Boot2Docker 17.11.0-ce (TCL 7.2); HEAD : e620608 - Tue Nov 21 18:11:40 UTC 2017
+Kernel Version: 4.4.108-boot2docker
+Operating System: Boot2Docker 17.12.0-ce (TCL 8.2.1); HEAD : 378b049 - Wed Dec 27 23:39:20 UTC 2017
 OSType: linux
 Architecture: x86_64
 CPUs: 1
-Total Memory: 995.8MiB
+Total Memory: 996MiB
 Name: boot2docker
-ID: NAO6:LNSN:2H5F:6Y36:NNZ3:XXFM:GANK:HZYU:NDEB:USJY:PUFD:NOEW
+ID: DY4F:H4YO:T2XO:TUM2:2I5F:FXHA:2ISP:L6CA:MMGU:NQPS:3G3E:XA2M
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): true
- File Descriptors: 20
- Goroutines: 34
- System Time: 2017-11-21T19:26:49.114847111Z
+ File Descriptors: 19
+ Goroutines: 33
+ System Time: 2017-12-28T01:20:49.70175642Z
  EventsListeners: 0
 Registry: https://index.docker.io/v1/
+Labels:
 Experimental: false
 Insecure Registries:
  127.0.0.0/8
