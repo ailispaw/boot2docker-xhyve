@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v17.12.0-ce
+- boot2docker v18.01.0-ce
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.12.0-ce, build HEAD : 378b049 - Wed Dec 27 23:39:20 UTC 2017
-Docker version 17.12.0-ce, build c97c6d6
+Boot2Docker version 18.01.0-ce, build HEAD : 0bb7bbd - Thu Jan 11 16:32:39 UTC 2018
+Docker version 18.01.0-ce, build 03596f5
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.12.0-ce
+Server Version: 18.01.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -161,20 +161,20 @@ init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.108-boot2docker
-Operating System: Boot2Docker 17.12.0-ce (TCL 8.2.1); HEAD : 378b049 - Wed Dec 27 23:39:20 UTC 2017
+Kernel Version: 4.4.111-boot2docker
+Operating System: Boot2Docker 18.01.0-ce (TCL 8.2.1); HEAD : 0bb7bbd - Thu Jan 11 16:32:39 UTC 2018
 OSType: linux
 Architecture: x86_64
 CPUs: 1
-Total Memory: 996MiB
+Total Memory: 995.9MiB
 Name: boot2docker
-ID: DY4F:H4YO:T2XO:TUM2:2I5F:FXHA:2ISP:L6CA:MMGU:NQPS:3G3E:XA2M
+ID: ONS7:O7M4:HBJI:NM5X:UHDT:C646:6CRS:BLBS:PTTR:THCT:SV4I:2PUH
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): true
  File Descriptors: 19
  Goroutines: 33
- System Time: 2017-12-28T01:20:49.70175642Z
+ System Time: 2018-01-11T18:25:03.769176441Z
  EventsListeners: 0
 Registry: https://index.docker.io/v1/
 Labels:
