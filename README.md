@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 18.01.0-ce, build HEAD : 0bb7bbd - Thu Jan 11 16:32:39 UTC 2018
-Docker version 18.01.0-ce, build 03596f5
+Boot2Docker version 18.02.0-ce, build HEAD : 99245f4 - Thu Feb  8 17:43:39 UTC 2018
+Docker version 18.02.0-ce, build fc4de44
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 18.01.0-ce
+Server Version: 18.02.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -155,27 +155,23 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: 89623f28b87a6004d4b785663257362d1658a729
-runc version: b2567b37d7b75eb4cf325b77297b140ea686ce8f
+containerd version: 9b55aab90508bd389d7654c4baf173a981477d55
+runc version: 9f9c96235cc97674e935002fc3d78361b696a69e
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.111-boot2docker
-Operating System: Boot2Docker 18.01.0-ce (TCL 8.2.1); HEAD : 0bb7bbd - Thu Jan 11 16:32:39 UTC 2018
+Kernel Version: 4.4.115-boot2docker
+Operating System: Boot2Docker 18.02.0-ce (TCL 8.2.1); HEAD : 99245f4 - Thu Feb  8 17:43:39 UTC 2018
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.9MiB
 Name: boot2docker
-ID: ONS7:O7M4:HBJI:NM5X:UHDT:C646:6CRS:BLBS:PTTR:THCT:SV4I:2PUH
+ID: TPTK:6Y5H:LB5S:ZSYT:QCPS:5YBN:NJK4:4SXF:QIUZ:HGEB:DALP:3FXE
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
-Debug Mode (server): true
- File Descriptors: 19
- Goroutines: 33
- System Time: 2018-01-11T18:25:03.769176441Z
- EventsListeners: 0
+Debug Mode (server): false
 Registry: https://index.docker.io/v1/
 Labels:
 Experimental: false
