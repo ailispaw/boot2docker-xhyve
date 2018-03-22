@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v18.01.0-ce
+- boot2docker v18.03.0-ce
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 18.02.0-ce, build HEAD : 99245f4 - Thu Feb  8 17:43:39 UTC 2018
-Docker version 18.02.0-ce, build fc4de44
+Boot2Docker version 18.03.0-ce, build HEAD : 404ee40 - Thu Mar 22 17:12:23 UTC 2018
+Docker version 18.03.0-ce, build 0520e24
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 18.02.0-ce
+Server Version: 18.03.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -155,20 +155,20 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: 9b55aab90508bd389d7654c4baf173a981477d55
-runc version: 9f9c96235cc97674e935002fc3d78361b696a69e
+containerd version: cfd04396dc68220d1cecbe686a6cc3aa5ce3667c
+runc version: 4fc53a81fb7c994640722ac585fa9ca548971871
 init version: 949e6fa
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.115-boot2docker
-Operating System: Boot2Docker 18.02.0-ce (TCL 8.2.1); HEAD : 99245f4 - Thu Feb  8 17:43:39 UTC 2018
+Kernel Version: 4.9.89-boot2docker
+Operating System: Boot2Docker 18.03.0-ce (TCL 8.2.1); HEAD : 404ee40 - Thu Mar 22 17:12:23 UTC 2018
 OSType: linux
 Architecture: x86_64
 CPUs: 1
-Total Memory: 995.9MiB
+Total Memory: 995.7MiB
 Name: boot2docker
-ID: TPTK:6Y5H:LB5S:ZSYT:QCPS:5YBN:NJK4:4SXF:QIUZ:HGEB:DALP:3FXE
+ID: HI3G:GEZF:I4K4:AN6U:QZRL:QS2X:GNZI:3M2N:HYOD:CMEA:X4YF:XTMI
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): false
