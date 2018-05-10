@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v18.04.0-ce
+- boot2docker v18.05.0-ce
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 18.04.0-ce, build HEAD : b8a34c0 - Wed Apr 11 17:00:55 UTC 2018
-Docker version 18.04.0-ce, build 3d479c0
+Boot2Docker version 18.05.0-ce, build HEAD : b5d6989 - Thu May 10 16:35:28 UTC 2018
+Docker version 18.05.0-ce, build f150324
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 18.04.0-ce
+Server Version: 18.05.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -162,13 +162,13 @@ Security Options:
  seccomp
   Profile: default
 Kernel Version: 4.9.93-boot2docker
-Operating System: Boot2Docker 18.04.0-ce (TCL 8.2.1); HEAD : b8a34c0 - Wed Apr 11 17:00:55 UTC 2018
+Operating System: Boot2Docker 18.05.0-ce (TCL 8.2.1); HEAD : b5d6989 - Thu May 10 16:35:28 UTC 2018
 OSType: linux
 Architecture: x86_64
 CPUs: 1
 Total Memory: 995.7MiB
 Name: boot2docker
-ID: AGBH:FI4L:EZS7:24SD:JGMH:ZLDK:XOVP:EIKF:MQ72:PNDX:ONRG:U43J
+ID: MZ2E:IP4B:FHDZ:JZRW:PMND:KWPI:DBEZ:GX5N:EIYT:GOEQ:OXOJ:JBS2
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): false
