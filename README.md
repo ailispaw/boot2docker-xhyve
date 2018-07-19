@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v17.12.1-ce
+- boot2docker v18.05.0-ce
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -86,8 +86,8 @@ docker@192.168.64.3's password:
 | '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
 | |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
 |_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 17.12.1-ce, build HEAD : 42357fc - Wed Feb 28 17:52:00 UTC 2018
-Docker version 17.12.1-ce, build 7390fc6
+Boot2Docker version 18.06.0-ce, build HEAD : 1f40eb2 - Thu Jul 19 18:48:09 UTC 2018
+Docker version 18.06.0-ce, build 0ffa825
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +140,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 17.12.1-ce
+Server Version: 18.06.0-ce
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -155,27 +155,23 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: 9b55aab90508bd389d7654c4baf173a981477d55
-runc version: 9f9c96235cc97674e935002fc3d78361b696a69e
-init version: 949e6fa
+containerd version: d64c661f1d51c48782c9cec8fda7604785f93587
+runc version: 69663f0bd4b60df09991c08812a60108003fa340
+init version: fec3683
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.4.119-boot2docker
-Operating System: Boot2Docker 17.12.1-ce (TCL 8.2.1); HEAD : 42357fc - Wed Feb 28 17:52:00 UTC 2018
+Kernel Version: 4.9.93-boot2docker
+Operating System: Boot2Docker 18.06.0-ce (TCL 8.2.1); HEAD : 1f40eb2 - Thu Jul 19 18:48:09 UTC 2018
 OSType: linux
 Architecture: x86_64
 CPUs: 1
-Total Memory: 995.9MiB
+Total Memory: 995.7MiB
 Name: boot2docker
-ID: XLE4:ILPC:Z533:2YVM:WJXH:YJW5:Y2K4:5HNO:VEH6:JVXH:ZCKY:OCOL
+ID: 3N3E:224D:NDUO:NOVH:LKJ7:WWKW:NHPW:MDAX:KW7C:QT6C:P45B:J7H4
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
-Debug Mode (server): true
- File Descriptors: 19
- Goroutines: 33
- System Time: 2018-02-28T19:33:21.903046007Z
- EventsListeners: 0
+Debug Mode (server): false
 Registry: https://index.docker.io/v1/
 Labels:
 Experimental: false
