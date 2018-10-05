@@ -1,15 +1,19 @@
-VERSION := v18.06.1-ce
+VERSION := v18.09.0
 
-all: initrd.img vmlinuz64 boot2docker-data.img uuid2ip
+all: initrd.img vmlinuz boot2docker-data.img uuid2ip
 
 upgrade:
 	$(RM) boot2docker.iso
 	$(MAKE)
 
-initrd.img vmlinuz64: boot2docker.iso
-	hdiutil mount boot2docker.iso
-	cp /Volumes/b2d-$(VERSION)/boot/$@ . && sync
-	hdiutil unmount /Volumes/b2d-$(VERSION)
+initrd.img vmlinuz: boot2docker.iso
+	mkdir -p ro_iso
+	$(eval DEV=$(shell hdiutil attach -nomount boot2docker.iso | head -n 1 | awk '{print $$1}'))
+	mount -t cd9660 $(DEV) ro_iso
+	cp ro_iso/boot/initrd.img .
+	cp ro_iso/boot/vmlinuz .
+	umount ro_iso
+	hdiutil detach $(DEV)
 
 boot2docker.iso:
 	curl -OL https://github.com/boot2docker/boot2docker/releases/download/$(VERSION)/boot2docker.iso
@@ -21,7 +25,7 @@ boot2docker-data.tar.gz:
 	curl -OL https://github.com/ailispaw/boot2docker-xhyve/releases/download/v0.6.0/boot2docker-data.tar.gz
 
 clean: exports-clean uuid2ip-clean
-	$(RM) initrd.img vmlinuz64
+	$(RM) initrd.img vmlinuz
 	$(RM) boot2docker.iso
 	$(RM) boot2docker-data.img
 	$(RM) boot2docker-data.tar.gz
