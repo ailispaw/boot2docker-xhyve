@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v18.06.1-ce
+- boot2docker v18.09.0
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -73,21 +73,10 @@ boot2docker login:
 ```
 $ make ssh
 docker@192.168.64.3's password:
-                        ##         .
-                  ## ## ##        ==
-               ## ## ## ## ##    ===
-           /"""""""""""""""""\___/ ===
-      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
-           \______ o           __/
-             \    \         __/
-              \____\_______/
- _                 _   ____     _            _
-| |__   ___   ___ | |_|___ \ __| | ___   ___| | _____ _ __
-| '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
-| |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
-|_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
-Boot2Docker version 18.06.1-ce, build HEAD : c7e5c3e - Wed Aug 22 16:27:42 UTC 2018
-Docker version 18.06.1-ce, build e68fc7a
+   ( '>')
+  /) TC (\   Core is distributed with ABSOLUTELY NO WARRANTY.
+ (/-_--_-\)           www.tinycorelinux.net
+
 docker@boot2docker:~$ 
 ```
 
@@ -140,7 +129,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 18.06.1-ce
+Server Version: 18.09.0
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -150,7 +139,7 @@ Cgroup Driver: cgroupfs
 Plugins:
  Volume: local
  Network: bridge host macvlan null overlay
- Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
+ Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
 Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
@@ -161,14 +150,14 @@ init version: fec3683
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.9.93-boot2docker
-Operating System: Boot2Docker 18.06.1-ce (TCL 8.2.1); HEAD : c7e5c3e - Wed Aug 22 16:27:42 UTC 2018
+Kernel Version: 4.14.79-boot2docker
+Operating System: Boot2Docker 18.09.0 (TCL 8.2.1)
 OSType: linux
 Architecture: x86_64
 CPUs: 1
-Total Memory: 995.7MiB
+Total Memory: 989.4MiB
 Name: boot2docker
-ID: EQPF:GQXE:RURN:EITU:5G7H:E2AZ:MFXH:NNTW:IFKR:FOQD:LYQF:2SXU
+ID: JBFU:TNYM:YDW6:QLMG:G44I:VTAG:QXBY:QM44:WGQB:EFRM:4477:SIJW
 Docker Root Dir: /mnt/vda1/var/lib/docker
 Debug Mode (client): false
 Debug Mode (server): false
@@ -178,6 +167,12 @@ Experimental: false
 Insecure Registries:
  127.0.0.0/8
 Live Restore Enabled: false
+Product License: Community Engine
+
+WARNING: API is accessible on http://0.0.0.0:2375 without encryption.
+         Access to the remote API is equivalent to root access on the host. Refer
+         to the 'Docker daemon attack surface' section in the documentation for
+         more information: https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface
 ```
 
 ## Upgrading Boot2Docker
