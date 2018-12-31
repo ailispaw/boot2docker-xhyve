@@ -18,6 +18,8 @@ awk '
   }
   if ($1 ~ /^hw_address/) {
     hw_address=substr($1, 14)
+    split(hw_address, a, ":")
+    hw_address=sprintf("%02s:%02s:%02s:%02s:%02s:%02s", a[1], a[2], a[3], a[4], a[5], a[6])
   }
   if (hw_address != "" && ip_address != "") {
     ip_addresses[hw_address]=ip_address
