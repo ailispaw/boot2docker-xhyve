@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v18.09.3
+- boot2docker v18.09.4
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -129,7 +129,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 18.09.3
+Server Version: 18.09.4
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -144,14 +144,14 @@ Swarm: inactive
 Runtimes: runc
 Default Runtime: runc
 Init Binary: docker-init
-containerd version: e6b3f5632f50dbc4e9cb6288d911bf4f5e95b18e
-runc version: 6635b4f0c6af3810594d2770f662f34ddc15b40d
+containerd version: bb71b10fd8f58240ca47fbb579b9d1028eea7c84
+runc version: 2b18fe1d885ee5083ef9f0838fee39b62d653e30
 init version: fec3683
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.14.104-boot2docker
-Operating System: Boot2Docker 18.09.3 (TCL 8.2.1)
+Kernel Version: 4.14.111-boot2docker
+Operating System: Boot2Docker 18.09.4 (TCL 8.2.1)
 OSType: linux
 Architecture: x86_64
 CPUs: 1
