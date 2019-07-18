@@ -129,7 +129,7 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 18.09.7
+Server Version: 18.09.8
 Storage Driver: overlay2
  Backing Filesystem: extfs
  Supports d_type: true
@@ -150,8 +150,8 @@ init version: fec3683
 Security Options:
  seccomp
   Profile: default
-Kernel Version: 4.14.131-boot2docker
-Operating System: Boot2Docker 18.09.7 (TCL 8.2.1)
+Kernel Version: 4.14.133-boot2docker
+Operating System: Boot2Docker 18.09.8 (TCL 8.2.1)
 OSType: linux
 Architecture: x86_64
 CPUs: 1
