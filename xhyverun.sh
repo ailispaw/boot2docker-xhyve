@@ -13,6 +13,7 @@ NET="-s 2:0,virtio-net"
 IMG_HDD="-s 4,virtio-blk,boot2docker-data.img"
 PCI_DEV="-s 0:0,hostbridge -s 31,lpc"
 LPC_DEV="-l com1,stdio"
+RNG="-s 5,virtio-rnd"
 
 UUID="bb60a7fd-2655-4927-88a6-fdd1e2223ddc"
 if [ -n "${UUID}" ]; then
@@ -36,7 +37,7 @@ done
 /usr/libexec/bootpd
 echo "Starting VM"
 while [ 1 ]; do
-  xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
+  xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $RNG $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
   if [ $? -ne 0 ]; then
     break
   fi
