@@ -2,7 +2,7 @@
 
 ## Features
 
-- boot2docker v18.09.7
+- boot2docker v19.03.0
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder: /Users is NFS-mounted on the boot2docker VM.
@@ -124,50 +124,53 @@ unset DOCKER_TLS_VERIFY;
 $ eval $(make env)
 
 $ docker info
-Containers: 0
- Running: 0
- Paused: 0
- Stopped: 0
-Images: 0
-Server Version: 18.09.8
-Storage Driver: overlay2
- Backing Filesystem: extfs
- Supports d_type: true
- Native Overlay Diff: true
-Logging Driver: json-file
-Cgroup Driver: cgroupfs
-Plugins:
- Volume: local
- Network: bridge host macvlan null overlay
- Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
-Swarm: inactive
-Runtimes: runc
-Default Runtime: runc
-Init Binary: docker-init
-containerd version: 894b81a4b802e4eb2a91d1ce216b8817763c29fb
-runc version: 425e105d5a03fabd737a126ad93d62a9eeede87f
-init version: fec3683
-Security Options:
- seccomp
-  Profile: default
-Kernel Version: 4.14.133-boot2docker
-Operating System: Boot2Docker 18.09.8 (TCL 8.2.1)
-OSType: linux
-Architecture: x86_64
-CPUs: 1
-Total Memory: 989.5MiB
-Name: boot2docker
-ID: JBFU:TNYM:YDW6:QLMG:G44I:VTAG:QXBY:QM44:WGQB:EFRM:4477:SIJW
-Docker Root Dir: /mnt/vda1/var/lib/docker
-Debug Mode (client): false
-Debug Mode (server): false
-Registry: https://index.docker.io/v1/
-Labels:
-Experimental: false
-Insecure Registries:
- 127.0.0.0/8
-Live Restore Enabled: false
-Product License: Community Engine
+Client:
+ Debug Mode: false
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 19.03.0
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 894b81a4b802e4eb2a91d1ce216b8817763c29fb
+ runc version: 425e105d5a03fabd737a126ad93d62a9eeede87f
+ init version: fec3683
+ Security Options:
+  seccomp
+   Profile: default
+ Kernel Version: 4.14.134-boot2docker
+ Operating System: Boot2Docker 19.03.0 (TCL 10.1)
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 989.5MiB
+ Name: boot2docker
+ ID: JBFU:TNYM:YDW6:QLMG:G44I:VTAG:QXBY:QM44:WGQB:EFRM:4477:SIJW
+ Docker Root Dir: /mnt/vda1/var/lib/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+ Product License: Community Engine
 
 WARNING: API is accessible on http://0.0.0.0:2375 without encryption.
          Access to the remote API is equivalent to root access on the host. Refer
