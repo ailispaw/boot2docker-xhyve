@@ -133,7 +133,7 @@ Server:
   Paused: 0
   Stopped: 0
  Images: 0
- Server Version: 19.03.0
+ Server Version: 19.03.1
  Storage Driver: overlay2
   Backing Filesystem: extfs
   Supports d_type: true
@@ -155,7 +155,7 @@ Server:
   seccomp
    Profile: default
  Kernel Version: 4.14.134-boot2docker
- Operating System: Boot2Docker 19.03.0 (TCL 10.1)
+ Operating System: Boot2Docker 19.03.1 (TCL 10.1)
  OSType: linux
  Architecture: x86_64
  CPUs: 1
