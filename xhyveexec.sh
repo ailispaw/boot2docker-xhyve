@@ -20,6 +20,7 @@ elif [ "${TERM_PROGRAM}" = "iTerm.app" ] ; then
   osascript <<END
     tell application "iTerm"
       tell application "System Events" to keystroke "d" using {shift down, command down}
+      delay 0.5
       tell the current session of current ${WINDOW} to write text "${CMD}"
       tell application "System Events" to keystroke "[" using {command down}
     end tell
